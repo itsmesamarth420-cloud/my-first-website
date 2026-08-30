@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+>
+
+    <url>
+        <loc>
+            https://itsmesamarth420-cloud.github.io/my-first-website/
+        </loc>
+    </url>
+
+
+    <url>
+        <loc>
+            https://itsmesamarth420-cloud.github.io/my-first-website/about.html
+        </loc>
+    </url>
+
+
+    <url>
+        <loc>
+            https://itsmesamarth420-cloud.github.io/my-first-website/projects.html
+        </loc>
+    </url>
+
+
+    <url>
+        <loc>
+            https://itsmesamarth420-cloud.github.io/my-first-website/learning.html
+        </loc>
+    </url>
+
+
+    <url>
+        <loc>
+            https://itsmesamarth420-cloud.github.io/my-first-website/contact.html
+        </loc>
+    </url>
+
+</urlset>

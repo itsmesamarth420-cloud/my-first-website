@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Projects | Samarth</title>
+
+    <meta
+        name="description"
+        content="Explore projects built by Samarth while learning web development, JavaScript, design and technology."
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         NAVIGATION
+         ===================================================== -->
+
+    <header>
+
+        <nav class="navbar">
+
+            <a
+                href="index.html"
+                class="logo"
+            >
+                SAMARTH
+            </a>
+
+
+            <div class="nav-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About
+                </a>
+
+                <a href="projects.html">
+                    Projects
+                </a>
+
+                <a href="learning.html">
+                    Learning
+                </a>
+
+                <a href="contact.html">
+                    Contact
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+         ===================================================== -->
+
+    <main>
+
+
+        <!-- =================================================
+             PAGE INTRO
+             ================================================= -->
+
+        <section class="intro">
+
+            <div class="intro-content">
+
+                <p class="eyebrow">
+                    PROJECTS
+                </p>
+
+                <h1>
+                    Things I'm building.
+                </h1>
+
+                <p class="intro-text">
+                    A collection of experiments, projects and
+                    things I'm building while learning how
+                    the web works.
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             PROJECTS
+             ================================================= -->
+
+        <section class="projects">
+
+            <h2>
+                Current Projects
+            </h2>
+
+
+            <div class="project-list">
+
+
+                <!-- =========================================
+                     PROJECT 1
+                     ========================================= -->
+
+                <article class="project">
+
+                    <h3>
+                        My First Website
+                    </h3>
+
+                    <p>
+                        A personal website built from scratch
+                        while learning HTML, CSS and JavaScript.
+                    </p>
+
+                    <span class="project-status">
+                        IN PROGRESS
+                    </span>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     PROJECT 2
+                     ========================================= -->
+
+                <article class="project">
+
+                    <h3>
+                        Interactive Gallery
+                    </h3>
+
+                    <p>
+                        An interactive image gallery with
+                        navigation, a lightbox and responsive
+                        behaviour.
+                    </p>
+
+                    <span class="project-status">
+                        COMPLETED
+                    </span>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     PROJECT 3
+                     ========================================= -->
+
+                <article class="project">
+
+                    <h3>
+                        More Experiments
+                    </h3>
+
+                    <p>
+                        More projects will appear here as I
+                        continue learning and building.
+                    </p>
+
+                    <span class="project-status">
+                        COMING SOON
+                    </span>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             GALLERY
+             ================================================= -->
+
+        <section class="projects">
+
+            <p class="eyebrow">
+                EXPERIMENT
+            </p>
+
+            <h2>
+                Interactive Gallery
+            </h2>
+
+            <p>
+                Click an image to open it in the gallery.
+            </p>
+
+
+            <div class="project-list">
+
+                <article class="project">
+
+                    <img
+                        src="images/bird.jpg"
+                        alt="Bird photographed outdoors"
+                        class="gallery-image"
+                    >
+
+                    <h3>
+                        Bird
+                    </h3>
+
+                    <p>
+                        One of my first image experiments.
+                    </p>
+
+                </article>
+
+
+                <article class="project">
+
+                    <img
+                        src="images/bird2.jpg"
+                        alt="Second bird photograph"
+                        class="gallery-image"
+                    >
+
+                    <h3>
+                        Bird 2
+                    </h3>
+
+                    <p>
+                        Another image used to test the
+                        interactive gallery.
+                    </p>
+
+                </article>
+
+
+                <article class="project">
+
+                    <img
+                        src="images/mountain.jpg"
+                        alt="Mountain landscape photograph"
+                        class="gallery-image"
+                    >
+
+                    <h3>
+                        Mountain
+                    </h3>
+
+                    <p>
+                        A landscape image used in the
+                        gallery experiment.
+                    </p>
+
+                </article>
+
+            </div>
+
+
+            <!-- Gallery counter -->
+
+            <p id="gallery-counter">
+                1 / 3
+            </p>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- =====================================================
+         LIGHTBOX
+         ===================================================== -->
+
+    <div id="lightbox">
+
+        <button
+            id="close-lightbox"
+            aria-label="Close image viewer"
+        >
+            ×
+        </button>
+
+
+        <button
+            id="previous-lightbox"
+            aria-label="Previous image"
+        >
+            ←
+        </button>
+
+
+        <img
+            id="lightbox-image"
+            src=""
+            alt=""
+        >
+
+
+        <button
+            id="next-lightbox"
+            aria-label="Next image"
+        >
+            →
+        </button>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         FOOTER
+         ===================================================== -->
+
+    <footer>
+
+        <p>
+            © 2026 Samarth. Built while learning.
+        </p>
+
+    </footer>
+
+
+
+    <!-- =====================================================
+         JAVASCRIPT
+         ===================================================== -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

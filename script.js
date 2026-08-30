@@ -57,11 +57,23 @@ const nextLightbox =
 
 
 
+const profileImage =
+    document.querySelector(".profile-image");
+
+
+
 // =========================================================
 // 4. SHOW CURRENT IMAGE
 // =========================================================
 
 function showImage() {
+
+    // Stop if this page does not have a gallery
+
+    if (!gallery) {
+        return;
+    }
+
 
     gallery.innerHTML = `
         <img
@@ -74,8 +86,12 @@ function showImage() {
 
     // Update counter
 
-    counter.textContent =
-        `${currentImage + 1} / ${images.length}`;
+    if (counter) {
+
+        counter.textContent =
+            `${currentImage + 1} / ${images.length}`;
+
+    }
 
 
     // Find the newly created image
@@ -86,15 +102,19 @@ function showImage() {
 
     // Make image clickable
 
-    mainImage.addEventListener("click", function() {
+    if (mainImage && lightbox && lightboxImage) {
 
-        lightboxImage.src =
-            images[currentImage];
+        mainImage.addEventListener("click", function() {
 
-        lightbox.style.display =
-            "flex";
+            lightboxImage.src =
+                images[currentImage];
 
-    });
+            lightbox.style.display =
+                "flex";
+
+        });
+
+    }
 
 }
 
@@ -151,18 +171,26 @@ function previousImage() {
 // 7. MAIN GALLERY BUTTONS
 // =========================================================
 
-nextButton.addEventListener("click", function() {
+if (nextButton) {
 
-    nextImage();
+    nextButton.addEventListener("click", function() {
 
-});
+        nextImage();
+
+    });
+
+}
 
 
-previousButton.addEventListener("click", function() {
+if (previousButton) {
 
-    previousImage();
+    previousButton.addEventListener("click", function() {
 
-});
+        previousImage();
+
+    });
+
+}
 
 
 
@@ -170,24 +198,42 @@ previousButton.addEventListener("click", function() {
 // 8. LIGHTBOX NEXT / PREVIOUS
 // =========================================================
 
-nextLightbox.addEventListener("click", function() {
+if (nextLightbox) {
 
-    nextImage();
+    nextLightbox.addEventListener("click", function() {
 
-    lightboxImage.src =
-        images[currentImage];
-
-});
+        nextImage();
 
 
-previousLightbox.addEventListener("click", function() {
+        if (lightboxImage) {
 
-    previousImage();
+            lightboxImage.src =
+                images[currentImage];
 
-    lightboxImage.src =
-        images[currentImage];
+        }
 
-});
+    });
+
+}
+
+
+if (previousLightbox) {
+
+    previousLightbox.addEventListener("click", function() {
+
+        previousImage();
+
+
+        if (lightboxImage) {
+
+            lightboxImage.src =
+                images[currentImage];
+
+        }
+
+    });
+
+}
 
 
 
@@ -195,12 +241,20 @@ previousLightbox.addEventListener("click", function() {
 // 9. CLOSE LIGHTBOX
 // =========================================================
 
-closeLightbox.addEventListener("click", function() {
+if (closeLightbox) {
 
-    lightbox.style.display =
-        "none";
+    closeLightbox.addEventListener("click", function() {
 
-});
+        if (lightbox) {
+
+            lightbox.style.display =
+                "none";
+
+        }
+
+    });
+
+}
 
 
 
@@ -212,6 +266,7 @@ document.addEventListener("keydown", function(event) {
 
     if (
         event.key === "Escape" &&
+        lightbox &&
         lightbox.style.display === "flex"
     ) {
 
@@ -228,47 +283,56 @@ document.addEventListener("keydown", function(event) {
 // 11. SLIDESHOW
 // =========================================================
 
-slideshowButton.addEventListener("click", function() {
+if (slideshowButton) {
+
+    slideshowButton.addEventListener("click", function() {
 
 
-    // Start slideshow
+        // Start slideshow
 
-    if (slideshow === null) {
-
-
-        slideshow =
-            setInterval(function() {
-
-                nextImage();
-
-                lightboxImage.src =
-                    images[currentImage];
-
-            }, 3000);
+        if (slideshow === null) {
 
 
-        slideshowButton.textContent =
-            "Stop Slideshow";
+            slideshow =
+                setInterval(function() {
 
-    }
-
-
-    // Stop slideshow
-
-    else {
+                    nextImage();
 
 
-        clearInterval(slideshow);
+                    if (lightboxImage) {
 
-        slideshow = null;
+                        lightboxImage.src =
+                            images[currentImage];
+
+                    }
+
+                }, 3000);
 
 
-        slideshowButton.textContent =
-            "Start Slideshow";
+            slideshowButton.textContent =
+                "Stop Slideshow";
 
-    }
+        }
 
-});
+
+        // Stop slideshow
+
+        else {
+
+
+            clearInterval(slideshow);
+
+            slideshow = null;
+
+
+            slideshowButton.textContent =
+                "Start Slideshow";
+
+        }
+
+    });
+
+}
 
 
 
@@ -279,20 +343,27 @@ slideshowButton.addEventListener("click", function() {
 showImage();
 
 
+
 // =========================================================
-// PROFILE PHOTO INTERACTION
+// 13. PROFILE PHOTO INTERACTION
 // =========================================================
 
-const profileImage =
-    document.querySelector(".profile-image");
+if (profileImage) {
+
+    profileImage.addEventListener("click", function() {
 
 
-profileImage.addEventListener("click", function() {
+        if (lightbox && lightboxImage) {
 
-    lightboxImage.src =
-        profileImage.src;
+            lightboxImage.src =
+                profileImage.src;
 
-    lightbox.style.display =
-        "flex";
 
-});
+            lightbox.style.display =
+                "flex";
+
+        }
+
+    });
+
+}
