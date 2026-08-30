@@ -4,24 +4,24 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
 >
 
-   <url>
-    <loc>https://samarth.website/</loc>
-</url>
+    <url>
+        <loc>https://samarth.website/</loc>
+    </url>
 
-<url>
-    <loc>https://samarth.website/about.html</loc>
-</url>
+    <url>
+        <loc>https://samarth.website/about/</loc>
+    </url>
 
-<url>
-    <loc>https://samarth.website/projects.html</loc>
-</url>
+    <url>
+        <loc>https://samarth.website/projects/</loc>
+    </url>
 
-<url>
-    <loc>https://samarth.website/learning.html</loc>
-</url>
+    <url>
+        <loc>https://samarth.website/learning/</loc>
+    </url>
 
-<url>
-    <loc>https://samarth.website/contact.html</loc>
-</url>
+    <url>
+        <loc>https://samarth.website/contact/</loc>
+    </url>
 
 </urlset>

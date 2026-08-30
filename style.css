@@ -149,8 +149,10 @@ p {
     box-shadow:
         0 10px 40px rgba(0, 0, 0, 0.25);
 }
+
+
 /* =========================================================
-   HERO CONTENT
+   5. HERO CONTENT
    ========================================================= */
 
 .intro {
@@ -163,8 +165,17 @@ p {
     justify-content: space-between;
 
     gap: 40px;
-}
 
+    min-height: 400px;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 107, 53, 0.15),
+            transparent 40%
+        ),
+        #151515;
+}
 
 .intro-content {
     flex: 1;
@@ -174,11 +185,12 @@ p {
 
 
 /* =========================================================
-   PROFILE IMAGE
+   6. PROFILE IMAGE
    ========================================================= */
 
 .profile-image {
     width: 180px;
+
     height: 180px;
 
     object-fit: cover;
@@ -193,11 +205,13 @@ p {
 
     box-shadow:
         0 15px 40px rgba(0, 0, 0, 0.4);
+
     transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease,
-    border-color 0.35s ease;
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
 }
+
 .profile-image:hover {
     transform: translateY(-6px) scale(1.03);
 
@@ -210,26 +224,7 @@ p {
 
 
 /* =========================================================
-   5. HERO
-   ========================================================= */
-
-.intro {
-    min-height: 400px;
-
-    justify-content: space-between;
-
-    background:
-        radial-gradient(
-            circle at top right,
-            rgba(255, 107, 53, 0.15),
-            transparent 40%
-        ),
-        #151515;
-}
-
-
-/* =========================================================
-   6. EYEBROW TEXT
+   7. EYEBROW TEXT
    ========================================================= */
 
 .eyebrow {
@@ -246,7 +241,7 @@ p {
 
 
 /* =========================================================
-   7. ABOUT SECTION
+   8. ABOUT SECTION
    ========================================================= */
 
 .about-section p:not(.eyebrow) {
@@ -257,7 +252,7 @@ p {
 
 
 /* =========================================================
-   8. PROJECT LIST
+   9. PROJECT LIST
    ========================================================= */
 
 .project-list {
@@ -274,7 +269,7 @@ p {
 
 
 /* =========================================================
-   9. PROJECT CARDS
+   10. PROJECT CARDS
    ========================================================= */
 
 .project {
@@ -314,7 +309,7 @@ p {
 
 
 /* =========================================================
-   10. GALLERY IMAGE
+   11. GALLERY IMAGE
    ========================================================= */
 
 .project img {
@@ -343,7 +338,7 @@ p {
 
 
 /* =========================================================
-   11. GALLERY COUNTER
+   12. GALLERY COUNTER
    ========================================================= */
 
 #gallery-counter {
@@ -358,7 +353,7 @@ p {
 
 
 /* =========================================================
-   12. GENERAL BUTTONS
+   13. GENERAL BUTTONS
    ========================================================= */
 
 button {
@@ -399,7 +394,7 @@ button:active {
 
 
 /* =========================================================
-   13. PROJECT BUTTONS
+   14. PROJECT BUTTONS
    ========================================================= */
 
 .project button {
@@ -410,7 +405,7 @@ button:active {
 
 
 /* =========================================================
-   14. PROJECT STATUS
+   15. PROJECT STATUS
    ========================================================= */
 
 .project-status {
@@ -435,7 +430,7 @@ button:active {
 
 
 /* =========================================================
-   15. LEARNING SECTION
+   16. LEARNING SECTION
    ========================================================= */
 
 .learning {
@@ -481,12 +476,13 @@ button:active {
 
 
 /* =========================================================
-   16. EXPERIMENT SECTION
+   17. EXPERIMENT SECTION
    ========================================================= */
 
 .experiment {
     text-align: center;
 }
+
 
 /* =========================================================
    18. LIGHTBOX
@@ -670,7 +666,9 @@ button:active {
     }
 
 
-    /* Mobile navigation */
+    /* -----------------------------------------------------
+       Mobile navigation
+       ----------------------------------------------------- */
 
     .navbar {
         padding: 15px 18px;
@@ -692,7 +690,9 @@ button:active {
     }
 
 
-    /* Mobile sections */
+    /* -----------------------------------------------------
+       Mobile sections
+       ----------------------------------------------------- */
 
     .intro,
     .about-section,
@@ -705,8 +705,18 @@ button:active {
     }
 
 
+    /* -----------------------------------------------------
+       Mobile hero
+       ----------------------------------------------------- */
+
     .intro {
         min-height: 300px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
     }
 
 
@@ -715,12 +725,27 @@ button:active {
     }
 
 
+    .profile-image {
+        width: 130px;
+
+        height: 130px;
+
+        align-self: center;
+    }
+
+
+    /* -----------------------------------------------------
+       Mobile about section
+       ----------------------------------------------------- */
+
     .about-section p:not(.eyebrow) {
         font-size: 16px;
     }
 
 
-    /* Mobile projects */
+    /* -----------------------------------------------------
+       Mobile projects
+       ----------------------------------------------------- */
 
     .project-list {
         flex-direction: column;
@@ -739,7 +764,9 @@ button:active {
     }
 
 
-    /* Mobile lightbox */
+    /* -----------------------------------------------------
+       Mobile lightbox
+       ----------------------------------------------------- */
 
     #lightbox {
         padding: 20px;
@@ -778,41 +805,36 @@ button:active {
 
         right: 15px;
     }
-/* Mobile social links */
 
-.experiment-button {
-    width: 100%;
-    max-width: 300px;
 
-    margin-left: auto;
-    margin-right: auto;
-}
-}
-    .intro {
-        flex-direction: column;
+    /* -----------------------------------------------------
+       Mobile social links
+       ----------------------------------------------------- */
 
-        align-items: flex-start;
+    .experiment-button {
+        width: 100%;
 
-        gap: 25px;
+        max-width: 300px;
+
+        margin-left: auto;
+
+        margin-right: auto;
     }
 
+}
 
-    .profile-image {
-        width: 130px;
 
-        height: 130px;
-
-        align-self: center;
-    }
 /* =========================================================
-   NAVBAR LOGO IMAGE
+   23. NAVBAR LOGO IMAGE
    ========================================================= */
 
 .logo img {
     width: 100px;
+
     height: 60px;
 
     object-fit: cover;
+
     object-position: center;
 
     display: block;
@@ -824,22 +846,26 @@ button:active {
         opacity 0.3s ease;
 }
 
-
 .logo img:hover {
     transform: scale(1.04);
+
     opacity: 0.9;
 }
+
+
 /* =========================================================
-   CONTACT PAGE IMAGE
+   24. CONTACT PAGE IMAGE
    ========================================================= */
 
 .contact-image {
     width: 220px;
+
     height: 220px;
 
     object-fit: cover;
 
     display: block;
+
     cursor: pointer;
 
     margin: 35px auto 0;
@@ -856,24 +882,27 @@ button:active {
         box-shadow 0.3s ease;
 }
 
-
 .contact-image:hover {
     transform: translateY(-5px);
 
     box-shadow:
         0 20px 50px rgba(0, 0, 0, 0.55);
 }
+
+
 /* =========================================================
-   CONTACT SOCIAL LINKS
+   25. CONTACT SOCIAL LINKS
    ========================================================= */
 
 .experiment-button {
     display: inline-flex;
 
     width: 215px;
+
     min-height: 56px;
 
     align-items: center;
+
     justify-content: center;
 
     margin: 25px 6px 0;
@@ -891,6 +920,7 @@ button:active {
     text-decoration: none;
 
     font-size: 16px;
+
     font-weight: 600;
 
     box-sizing: border-box;
@@ -904,7 +934,9 @@ button:active {
 }
 
 
-/* Instagram */
+/* ---------------------------------------------------------
+   Instagram
+   --------------------------------------------------------- */
 
 .experiment-button:first-of-type {
     color: #ff8a63;
@@ -913,7 +945,6 @@ button:active {
 
     background-color: rgba(255, 107, 53, 0.06);
 }
-
 
 .experiment-button:first-of-type:hover {
     color: #ffffff;
@@ -930,7 +961,9 @@ button:active {
 }
 
 
-/* LinkedIn */
+/* ---------------------------------------------------------
+   LinkedIn
+   --------------------------------------------------------- */
 
 .experiment-button:nth-of-type(2) {
     color: #70a9d8;
@@ -939,7 +972,6 @@ button:active {
 
     background-color: rgba(112, 169, 216, 0.06);
 }
-
 
 .experiment-button:nth-of-type(2):hover {
     color: #ffffff;
@@ -955,6 +987,10 @@ button:active {
         0 0 20px rgba(112, 169, 216, 0.12);
 }
 
+
+/* ---------------------------------------------------------
+   Button active state
+   --------------------------------------------------------- */
 
 .experiment-button:active {
     transform: translateY(-1px);

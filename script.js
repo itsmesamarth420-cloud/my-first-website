@@ -3,9 +3,9 @@
 // =========================================================
 
 const images = [
-    "images/bird.jpg",
-    "images/bird2.jpg",
-    "images/mountain.jpg"
+    "/images/bird.jpg",
+    "/images/bird2.jpg",
+    "/images/mountain.jpg"
 ];
 
 

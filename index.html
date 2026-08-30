@@ -1,57 +1,94 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
+
+    <!-- =====================================================
+         BASIC SEO
+         ===================================================== -->
+
     <meta charset="UTF-8">
 
-<meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
->
- <meta
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
         name="description"
         content="Samarth's personal website, where he explores web development, technology, ideas and projects while learning to build on the internet."
     >
-    <!-- Open Graph -->
-<meta
-    property="og:title"
-    content="Samarth | Building, Learning & Experimenting on the Web"
->
 
-<meta
-    property="og:description"
-    content="Samarth's personal website, where he explores web development, technology, ideas and projects while learning to build on the internet."
->
 
-<meta
-    property="og:type"
-    content="website"
->
+    <!-- =====================================================
+         OPEN GRAPH
+         ===================================================== -->
 
-<meta
-    property="og:url"
-    content="https://samarth.website/"
->
+    <meta
+        property="og:title"
+        content="Samarth | Building, Learning & Experimenting on the Web"
+    >
 
-<meta
-    property="og:image"
-    content="https://samarth.website/images/samarth.jpg"
->
-   <link
-    rel="canonical"
-    href="https://samarth.website/"
->
+    <meta
+        property="og:description"
+        content="Samarth's personal website, where he explores web development, technology, ideas and projects while learning to build on the internet."
+    >
 
-    <title>Samarth | Building, Learning & Experimenting on the Web</title>
-    
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:url"
+        content="https://samarth.website/"
+    >
+
+    <meta
+        property="og:image"
+        content="https://samarth.website/images/samarth.jpg"
+    >
+
+
+    <!-- =====================================================
+         CANONICAL
+         ===================================================== -->
+
     <link
-    rel="icon"
-    type="image/png"
-    href="images/favicon.png"
->
+        rel="canonical"
+        href="https://samarth.website/"
+    >
 
-    <link rel="stylesheet" 
-          href="style.css">
+
+    <!-- =====================================================
+         TITLE
+         ===================================================== -->
+
+    <title>
+        Samarth | Building, Learning & Experimenting on the Web
+    </title>
+
+
+    <!-- =====================================================
+         FAVICON
+         ===================================================== -->
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="images/favicon.png"
+    >
+
+
+    <!-- =====================================================
+         STYLESHEET
+         ===================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 
 </head>
 
@@ -65,36 +102,42 @@
 
     <nav class="navbar">
 
-        <a href="index.html" class="logo">
+        <a
+            href="./"
+            class="logo"
+        >
+
             <img
-                 src="images/logo.png"
-                 alt="Samarth logo"
-    >
+                src="images/logo.png"
+                alt="Samarth logo"
+            >
+
         </a>
 
-       <div class="nav-links">
 
-    <a href="index.html">
-        Home
-    </a>
+        <div class="nav-links">
 
-    <a href="about.html">
-        About
-    </a>
+            <a href="./">
+                Home
+            </a>
 
-    <a href="projects.html">
-        Projects
-    </a>
+            <a href="about/">
+                About
+            </a>
 
-    <a href="learning.html">
-        Learning
-    </a>
+            <a href="projects/">
+                Projects
+            </a>
 
-    <a href="contact.html">
-        Contact
-    </a>
+            <a href="learning/">
+                Learning
+            </a>
 
-</div>
+            <a href="contact/">
+                Contact
+            </a>
+
+        </div>
 
     </nav>
 
@@ -104,35 +147,35 @@
          HERO
          ===================================================== -->
 
-<div class="intro">
+    <div class="intro">
 
-    <div class="intro-content">
+        <div class="intro-content">
 
-        <p class="eyebrow">
-            HELLO, I'M SAMARTH
-        </p>
+            <p class="eyebrow">
+                HELLO, I'M SAMARTH
+            </p>
 
-        <h1>
-            I'm learning to build things on the internet.🚀
-        </h1>
+            <h1>
+                I'm learning to build things on the internet.🚀
+            </h1>
 
-        <p class="intro-text">
-            I'm exploring code, technology, ideas and the
-            strange things that happen when you combine them.
-            This website is where I'm experimenting, learning
-            and documenting what I build.
-        </p>
+            <p class="intro-text">
+                I'm exploring code, technology, ideas and the
+                strange things that happen when you combine them.
+                This website is where I'm experimenting, learning
+                and documenting what I build.
+            </p>
+
+        </div>
+
+
+        <img
+            class="profile-image"
+            src="images/samarth.jpg"
+            alt="Samarth"
+        >
 
     </div>
-
-
-    <img
-        class="profile-image"
-        src="images/samarth.jpg"
-        alt="Samarth"
-    >
-
-</div>
 
 
 
@@ -140,7 +183,10 @@
          ABOUT
          ===================================================== -->
 
-    <div class="about-section" id="about">
+    <div
+        class="about-section"
+        id="about"
+    >
 
         <p class="eyebrow">
             A LITTLE ABOUT ME
@@ -177,7 +223,10 @@
          PROJECTS
          ===================================================== -->
 
-    <div class="projects" id="projects">
+    <div
+        class="projects"
+        id="projects"
+    >
 
         <h2>
             Things I'm building
@@ -201,17 +250,21 @@
 
                 <p id="gallery-counter"></p>
 
+
                 <button id="previous-image">
                     Previous Image
                 </button>
+
 
                 <button id="next-image">
                     Next Image
                 </button>
 
+
                 <button id="slideshow-button">
                     Start Slideshow
                 </button>
+
 
                 <p>
                     My first JavaScript project. A small
@@ -257,7 +310,10 @@
          CURRENTLY LEARNING
          ===================================================== -->
 
-    <div class="learning" id="learning">
+    <div
+        class="learning"
+        id="learning"
+    >
 
         <p class="eyebrow">
             CURRENTLY LEARNING
@@ -266,6 +322,7 @@
         <h2>
             Building my developer toolkit
         </h2>
+
 
         <div class="learning-list">
 
@@ -293,7 +350,10 @@
          EXPERIMENT
          ===================================================== -->
 
-    <div class="experiment" id="experiment">
+    <div
+        class="experiment"
+        id="experiment"
+    >
 
         <p class="eyebrow">
             ONE STEP AT A TIME
@@ -308,8 +368,9 @@
             something new every time I change it.
         </p>
 
+
         <a
-            id="experiment-button"
+            class="experiment-button"
             href="https://www.instagram.com/samarth0_0/"
             target="_blank"
             rel="noopener noreferrer"
@@ -326,6 +387,7 @@
          ===================================================== -->
 
     <div id="lightbox">
+
 
         <button id="previous-lightbox">
             ←
