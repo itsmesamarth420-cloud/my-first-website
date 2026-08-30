@@ -277,3 +277,22 @@ slideshowButton.addEventListener("click", function() {
 // =========================================================
 
 showImage();
+
+
+// =========================================================
+// PROFILE PHOTO INTERACTION
+// =========================================================
+
+const profileImage =
+    document.querySelector(".profile-image");
+
+
+profileImage.addEventListener("click", function() {
+
+    lightboxImage.src =
+        profileImage.src;
+
+    lightbox.style.display =
+        "flex";
+
+});

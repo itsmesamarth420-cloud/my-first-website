@@ -149,6 +149,64 @@ p {
     box-shadow:
         0 10px 40px rgba(0, 0, 0, 0.25);
 }
+/* =========================================================
+   HERO CONTENT
+   ========================================================= */
+
+.intro {
+    display: flex;
+
+    flex-direction: row;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+.intro-content {
+    flex: 1;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   PROFILE IMAGE
+   ========================================================= */
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+
+    object-fit: cover;
+
+    border-radius: 18px;
+
+    border: 1px solid #333;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4);
+    transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+.profile-image:hover {
+    transform: translateY(-6px) scale(1.03);
+
+    border-color: rgba(255, 107, 53, 0.6);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.55),
+        0 0 70px rgba(255, 107, 53, 0.15);
+}
 
 
 /* =========================================================
@@ -158,11 +216,7 @@ p {
 .intro {
     min-height: 400px;
 
-    display: flex;
-
-    flex-direction: column;
-
-    justify-content: center;
+    justify-content: space-between;
 
     background:
         radial-gradient(
@@ -171,14 +225,6 @@ p {
             transparent 40%
         ),
         #151515;
-}
-
-.intro-text {
-    max-width: 650px !important;
-
-    font-size: 20px !important;
-
-    line-height: 1.7;
 }
 
 
@@ -774,3 +820,19 @@ button:active {
     }
 
 }
+    .intro {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 25px;
+    }
+
+
+    .profile-image {
+        width: 130px;
+
+        height: 130px;
+
+        align-self: center;
+    }
