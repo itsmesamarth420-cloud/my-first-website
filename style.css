@@ -836,3 +836,62 @@ button:active {
 
         align-self: center;
     }
+/* =========================================================
+   NAVBAR LOGO IMAGE
+   ========================================================= */
+
+.logo img {
+    width: 100px;
+    height: 60px;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+
+    border-radius: 8px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease;
+}
+
+
+.logo img:hover {
+    transform: scale(1.04);
+    opacity: 0.9;
+}
+/* =========================================================
+   CONTACT PAGE IMAGE
+   ========================================================= */
+
+.contact-image {
+    width: 220px;
+    height: 220px;
+
+    object-fit: cover;
+
+    display: block;
+    cursor: pointer;
+
+    margin: 35px auto 0;
+
+    border-radius: 18px;
+
+    border: 1px solid #2a2a2a;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.contact-image:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.55);
+}
