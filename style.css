@@ -829,7 +829,7 @@ button:active {
    ========================================================= */
 
 .logo img {
-    width: 80px;
+    width: 70px;
 
     height: 80px;
 
@@ -2080,7 +2080,7 @@ button:active {
     }
 
     .logo img {
-        width: 70px;
+        width: 60px;
         height: 50px;
         border-radius: 6px;
     }
@@ -2095,3 +2095,285 @@ button:active {
     }
 
 }
+/* =========================================================
+   HOME HERO - LANDSCAPE EARTH IMAGE
+   ========================================================= */
+
+.profile-image {
+    width: 520px;
+    height: 300px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 18px;
+
+    display: block;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.45);
+
+    border: 1px solid #2a2a2a;
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.profile-image:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 25px 60px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   MOBILE EARTH IMAGE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .profile-image {
+        width: 100%;
+        max-width: 500px;
+
+        height: auto;
+
+        aspect-ratio: 16 / 9;
+
+        object-fit: cover;
+
+        align-self: center;
+
+        border-radius: 14px;
+    }
+
+}
+/* =========================================================
+   GALLERY NAVIGATION BUTTONS
+   ========================================================= */
+
+.project-gallery button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 170px;
+    height: 52px;
+
+    padding: 0 24px;
+
+    background: rgba(255, 107, 53, 0.10);
+    color: #ff8a63;
+
+    border: 1px solid rgba(255, 107, 53, 0.45);
+    border-radius: 12px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        color 0.25s ease,
+        border-color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+
+.project-gallery button:hover {
+    background: rgba(255, 107, 53, 0.18);
+    color: #ffffff;
+
+    border-color: #ff6b35;
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 8px 25px rgba(0, 0, 0, 0.30);
+}
+
+
+.project-gallery button:active {
+    transform: translateY(0);
+}
+/* =========================================================
+   GALLERY CONTROLS
+   ========================================================= */
+
+.gallery-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+
+    margin: 24px 0 28px;
+
+    flex-wrap: wrap;
+}
+
+
+/* ---------------------------------------------------------
+   ALL GALLERY BUTTONS
+   --------------------------------------------------------- */
+
+.gallery-controls button {
+    height: 44px;
+
+    padding: 0 18px;
+
+    background: rgba(255, 107, 53, 0.07);
+
+    color: #ff8a63;
+
+    border: 1px solid rgba(255, 107, 53, 0.35);
+
+    border-radius: 999px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.25s ease,
+        border-color 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+/* ---------------------------------------------------------
+   HOVER
+   --------------------------------------------------------- */
+
+.gallery-controls button:hover {
+    background: rgba(255, 107, 53, 0.14);
+
+    border-color: rgba(255, 107, 53, 0.65);
+
+    color: #ffffff;
+
+    transform: translateY(-2px);
+}
+
+
+/* ---------------------------------------------------------
+   ACTIVE
+   --------------------------------------------------------- */
+
+.gallery-controls button:active {
+    transform: translateY(0);
+}
+
+
+/* ---------------------------------------------------------
+   PREVIOUS / NEXT
+   --------------------------------------------------------- */
+
+#previous-image,
+#next-image {
+    min-width: 135px;
+}
+
+
+/* ---------------------------------------------------------
+   SLIDESHOW
+   --------------------------------------------------------- */
+
+#slideshow-button {
+    min-width: 155px;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    .gallery-controls {
+        gap: 8px;
+    }
+
+    .gallery-controls button {
+        height: 42px;
+
+        padding: 0 14px;
+
+        font-size: 13px;
+    }
+
+    #previous-image,
+    #next-image {
+        min-width: 120px;
+    }
+
+    #slideshow-button {
+        min-width: 145px;
+    }
+
+}
+/* =========================================================
+   CONTACT PAGE IMAGE
+   ========================================================= */
+
+.contact-image {
+    width: 520px;
+    height: 300px;
+
+    object-fit: cover;
+    object-position: center;
+
+    display: block;
+    cursor: pointer;
+
+    margin: 35px auto 0;
+
+    border-radius: 18px;
+
+    border: 1px solid #2a2a2a;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.4);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.contact-image:hover {
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.55);
+}
+
+
+/* =========================================================
+   MOBILE CONTACT IMAGE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .contact-image {
+        width: 100%;
+        max-width: 520px;
+
+        height: auto;
+
+        aspect-ratio: 16 / 9;
+
+        object-fit: cover;
+
+        border-radius: 14px;
+    }
+
+}
+
