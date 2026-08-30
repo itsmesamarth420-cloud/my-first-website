@@ -1,0 +1,776 @@
+/* =========================================================
+   1. GLOBAL SETTINGS
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #0a0a0a;
+
+    color: #f5f5f5;
+
+    font-family: Arial, sans-serif;
+
+    max-width: 1000px;
+
+    margin: 0 auto;
+
+    padding: 50px 24px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   2. TYPOGRAPHY
+   ========================================================= */
+
+h1 {
+    color: #ff6b35;
+
+    font-size: 64px;
+
+    line-height: 1.05;
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+    letter-spacing: -2px;
+}
+
+h2 {
+    font-size: 32px;
+
+    margin-top: 0;
+
+    margin-bottom: 25px;
+}
+
+h3 {
+    color: #ffffff;
+
+    margin-bottom: 12px;
+}
+
+p {
+    color: #b8b8b8;
+}
+
+
+/* =========================================================
+   3. NAVIGATION
+   ========================================================= */
+
+.navbar {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 18px 24px;
+
+    margin-bottom: 24px;
+
+    background-color: rgba(21, 21, 21, 0.85);
+
+    border: 1px solid #2a2a2a;
+
+    border-radius: 14px;
+
+    backdrop-filter: blur(10px);
+
+    position: sticky;
+
+    top: 20px;
+
+    z-index: 900;
+}
+
+.logo {
+    color: #ff6b35;
+
+    font-size: 20px;
+
+    font-weight: bold;
+
+    text-decoration: none;
+
+    letter-spacing: 1px;
+}
+
+.nav-links {
+    display: flex;
+
+    gap: 25px;
+}
+
+.nav-links a {
+    color: #b8b8b8;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   4. MAIN SECTIONS
+   ========================================================= */
+
+.intro,
+.about-section,
+.projects,
+.learning,
+.experiment {
+    background-color: #151515;
+
+    border: 1px solid #2a2a2a;
+
+    border-radius: 18px;
+
+    padding: 40px;
+
+    margin-bottom: 24px;
+
+    box-shadow:
+        0 10px 40px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================================================
+   5. HERO
+   ========================================================= */
+
+.intro {
+    min-height: 400px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 107, 53, 0.15),
+            transparent 40%
+        ),
+        #151515;
+}
+
+.intro-text {
+    max-width: 650px !important;
+
+    font-size: 20px !important;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   6. EYEBROW TEXT
+   ========================================================= */
+
+.eyebrow {
+    color: #ff6b35 !important;
+
+    font-size: 13px !important;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================================
+   7. ABOUT SECTION
+   ========================================================= */
+
+.about-section p:not(.eyebrow) {
+    max-width: 700px;
+
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   8. PROJECT LIST
+   ========================================================= */
+
+.project-list {
+    display: flex;
+
+    flex-direction: row;
+
+    gap: 24px;
+
+    justify-content: space-between;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   9. PROJECT CARDS
+   ========================================================= */
+
+.project {
+    background-color: #1a1a1a;
+
+    padding: 24px;
+
+    border: 1px solid #2a2a2a;
+
+    border-radius: 14px;
+
+    flex: 1;
+
+    box-shadow:
+        0 15px 40px rgba(0, 0, 0, 0.35);
+
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+
+    border-color: #444;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.project h3 {
+    font-size: 24px;
+
+    margin-top: 0;
+}
+
+
+/* =========================================================
+   10. GALLERY IMAGE
+   ========================================================= */
+
+.project img {
+    width: 100%;
+
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: 10px;
+
+    display: block;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.3s ease,
+        filter 0.3s ease;
+}
+
+.project img:hover {
+    transform: scale(1.03);
+
+    filter: brightness(1.08);
+}
+
+
+/* =========================================================
+   11. GALLERY COUNTER
+   ========================================================= */
+
+#gallery-counter {
+    text-align: center;
+
+    color: #888;
+
+    font-size: 14px;
+
+    margin: 12px 0 18px;
+}
+
+
+/* =========================================================
+   12. GENERAL BUTTONS
+   ========================================================= */
+
+button {
+    background-color: #ff6b35;
+
+    color: #0a0a0a;
+
+    border: none;
+
+    padding: 11px 18px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+
+    box-shadow:
+        0 5px 15px rgba(255, 107, 53, 0.25);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   13. PROJECT BUTTONS
+   ========================================================= */
+
+.project button {
+    margin-top: 10px;
+
+    margin-right: 6px;
+}
+
+
+/* =========================================================
+   14. PROJECT STATUS
+   ========================================================= */
+
+.project-status {
+    display: inline-block;
+
+    color: #888 !important;
+
+    font-size: 12px !important;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    border: 1px solid #333;
+
+    padding: 5px 10px;
+
+    border-radius: 20px;
+
+    margin-top: 5px;
+}
+
+
+/* =========================================================
+   15. LEARNING SECTION
+   ========================================================= */
+
+.learning {
+    background:
+        linear-gradient(
+            135deg,
+            #151515,
+            #111111
+        );
+}
+
+.learning-list {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.learning-list span {
+    background-color: #1f1f1f;
+
+    color: #d0d0d0;
+
+    border: 1px solid #333;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        color 0.2s ease;
+}
+
+.learning-list span:hover {
+    color: #ffffff;
+
+    border-color: #ff6b35;
+}
+
+
+/* =========================================================
+   16. EXPERIMENT SECTION
+   ========================================================= */
+
+.experiment {
+    text-align: center;
+}
+
+
+/* =========================================================
+   17. INSTAGRAM LINK
+   ========================================================= */
+
+#experiment-button {
+    display: inline-block;
+
+    background-color: #ff6b35;
+
+    color: #0a0a0a;
+
+    text-decoration: none;
+
+    padding: 11px 18px;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    border-radius: 8px;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        opacity 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+#experiment-button:hover {
+    transform: translateY(-2px);
+
+    opacity: 0.9;
+
+    box-shadow:
+        0 5px 15px rgba(255, 107, 53, 0.25);
+}
+
+
+/* =========================================================
+   18. LIGHTBOX
+   ========================================================= */
+
+#lightbox {
+    display: none;
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 100vh;
+
+    background-color: rgba(0, 0, 0, 0.92);
+
+    justify-content: center;
+
+    align-items: center;
+
+    z-index: 1000;
+
+    padding: 40px;
+}
+
+
+/* =========================================================
+   19. LIGHTBOX IMAGE
+   ========================================================= */
+
+#lightbox-image {
+    max-width: 90%;
+
+    max-height: 85vh;
+
+    object-fit: contain;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 80px rgba(0, 0, 0, 0.8);
+}
+
+
+/* =========================================================
+   20. LIGHTBOX ARROWS
+   ========================================================= */
+
+#previous-lightbox,
+#next-lightbox {
+    position: absolute;
+
+    top: 50%;
+
+    width: 52px;
+
+    height: 52px;
+
+    padding: 0;
+
+    border-radius: 50%;
+
+    background-color: rgba(255, 255, 255, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.30);
+
+    color: white;
+
+    font-size: 24px;
+
+    font-weight: normal;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    backdrop-filter: blur(8px);
+
+    cursor: pointer;
+
+    box-shadow: none;
+
+    opacity: 1;
+
+    transition:
+        background-color 0.3s ease,
+        transform 0.2s ease;
+}
+
+#previous-lightbox {
+    left: 28px;
+
+    transform: translateY(-50%);
+}
+
+#next-lightbox {
+    right: 28px;
+
+    transform: translateY(-50%);
+}
+
+#previous-lightbox:hover,
+#next-lightbox:hover {
+    background-color: rgba(255, 255, 255, 0.25);
+
+    transform:
+        translateY(-50%)
+        scale(1.05);
+
+    opacity: 1;
+
+    box-shadow: none;
+}
+
+
+/* =========================================================
+   21. LIGHTBOX CLOSE BUTTON
+   ========================================================= */
+
+#close-lightbox {
+    position: absolute;
+
+    top: 25px;
+
+    right: 25px;
+
+    background-color: rgba(255, 255, 255, 0.10);
+
+    color: white;
+
+    border: 1px solid rgba(255, 255, 255, 0.20);
+
+    padding: 10px 16px;
+
+    border-radius: 8px;
+
+    backdrop-filter: blur(10px);
+}
+
+#close-lightbox:hover {
+    background-color: rgba(255, 255, 255, 0.20);
+
+    transform: none;
+
+    box-shadow: none;
+
+    opacity: 1;
+}
+
+
+/* =========================================================
+   22. RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 700px) {
+
+    body {
+        max-width: none;
+
+        margin: 0;
+
+        padding: 25px 15px;
+    }
+
+
+    h1 {
+        font-size: 44px;
+
+        letter-spacing: -1px;
+    }
+
+
+    h2 {
+        font-size: 28px;
+    }
+
+
+    /* Mobile navigation */
+
+    .navbar {
+        padding: 15px 18px;
+    }
+
+
+    .nav-links {
+        gap: 12px;
+    }
+
+
+    .nav-links a {
+        font-size: 13px;
+    }
+
+
+    .logo {
+        font-size: 17px;
+    }
+
+
+    /* Mobile sections */
+
+    .intro,
+    .about-section,
+    .projects,
+    .learning,
+    .experiment {
+        padding: 25px;
+
+        border-radius: 14px;
+    }
+
+
+    .intro {
+        min-height: 300px;
+    }
+
+
+    .intro-text {
+        font-size: 18px !important;
+    }
+
+
+    .about-section p:not(.eyebrow) {
+        font-size: 16px;
+    }
+
+
+    /* Mobile projects */
+
+    .project-list {
+        flex-direction: column;
+
+        gap: 20px;
+    }
+
+
+    .project {
+        width: 100%;
+    }
+
+
+    .project img {
+        height: 220px;
+    }
+
+
+    /* Mobile lightbox */
+
+    #lightbox {
+        padding: 20px;
+    }
+
+
+    #lightbox-image {
+        max-width: 95%;
+
+        max-height: 80vh;
+    }
+
+
+    #previous-lightbox {
+        left: 12px;
+    }
+
+
+    #next-lightbox {
+        right: 12px;
+    }
+
+
+    #previous-lightbox,
+    #next-lightbox {
+        width: 44px;
+
+        height: 44px;
+
+        font-size: 20px;
+    }
+
+
+    #close-lightbox {
+        top: 15px;
+
+        right: 15px;
+    }
+
+}
