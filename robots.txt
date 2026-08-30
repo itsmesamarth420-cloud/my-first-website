@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://itsmesamarth420-cloud.github.io/my-first-website/sitemap.xml
+Sitemap: https://samarth.website/sitemap.xml
