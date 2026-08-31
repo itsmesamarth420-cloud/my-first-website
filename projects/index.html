@@ -83,6 +83,23 @@
         href="../style.css"
     >
 
+    <!-- =====================================================
+         THEME SYSTEM
+         ===================================================== -->
+
+    <script>
+        (function() {
+            const cookie = document.cookie
+                .split(';')
+                .map((value) => value.trim())
+                .find((value) => value.startsWith('theme_preference='));
+
+            if (cookie && decodeURIComponent(cookie.slice(17)) === 'light') {
+                document.documentElement.classList.add('light-theme');
+            }
+        })();
+    </script>
+
 </head>
 
 
@@ -131,6 +148,8 @@
                 <a href="../contact/">
                     Contact
                 </a>
+
+                <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
 
             </div>
 
@@ -254,6 +273,32 @@
                     <span class="project-status">
                         COMING SOON
                     </span>
+
+                </article>
+
+
+
+                <!-- =========================================
+                     PROJECT 4
+                     ========================================= -->
+
+                <article class="project">
+
+                    <h3>
+                        Sudoku Game
+                    </h3>
+
+                    <p>
+                        A playable Sudoku game with multiple
+                        difficulty levels, notes and a timer.
+                    </p>
+
+                    <a
+                        href="sudoku/"
+                        class="project-link"
+                    >
+                        Play Sudoku
+                    </a>
 
                 </article>
 
@@ -418,6 +463,7 @@
          ===================================================== -->
 
     <script src="../script.js"></script>
+    <script src="../theme.js"></script>
 
 </body>
 

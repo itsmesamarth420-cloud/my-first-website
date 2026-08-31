@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <link
+        rel="canonical"
+        href="https://samarth.website/projects/sudoku/"
+    >
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Sudoku | Samarth's Projects</title>
+
+    <meta
+        name="description"
+        content="Play a responsive Sudoku game built with vanilla JavaScript by Samarth."
+    >
+
+    <meta
+        property="og:title"
+        content="Sudoku | Samarth's Projects"
+    >
+
+    <meta
+        property="og:description"
+        content="Play a responsive Sudoku game built with vanilla JavaScript by Samarth."
+    >
+
+    <meta
+        property="og:type"
+        content="website"
+    >
+
+    <meta
+        property="og:url"
+        content="https://samarth.website/projects/sudoku/"
+    >
+
+    <meta
+        property="og:image"
+        content="https://samarth.website/images/samarth.jpg"
+    >
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="../../images/favicon.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="../../style.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="sudoku.css"
+    >
+
+    <script>
+        (function() {
+            const cookie = document.cookie
+                .split(';')
+                .map((value) => value.trim())
+                .find((value) => value.startsWith('theme_preference='));
+
+            if (cookie && decodeURIComponent(cookie.slice(17)) === 'light') {
+                document.documentElement.classList.add('light-theme');
+            }
+        })();
+    </script>
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <nav class="navbar">
+
+            <a
+                href="../../"
+                class="logo"
+            >
+
+                <img
+                    src="../../images/logo.png"
+                    alt="Samarth logo"
+                >
+
+            </a>
+
+            <div class="nav-links">
+
+                <a href="../../">Home</a>
+                <a href="../../about/">About</a>
+                <a href="../">Projects</a>
+                <a href="../../learning/">Learning</a>
+                <a href="../../contact/">Contact</a>
+                <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main class="sudoku-page">
+
+        <section class="sudoku-hero">
+
+            <p class="eyebrow">PROJECT EXPERIMENT</p>
+
+            <h1>Sudoku.</h1>
+
+            <p>
+                A small logic challenge built with vanilla JavaScript. Choose a
+                difficulty, take your time, and use notes when you need them.
+            </p>
+
+        </section>
+
+
+        <section
+            class="sudoku-game"
+            aria-labelledby="sudoku-game-title"
+        >
+
+            <div class="sudoku-game-header">
+
+                <div>
+                    <p class="eyebrow">PLAY</p>
+                    <h2 id="sudoku-game-title">Your puzzle</h2>
+                </div>
+
+                <div
+                    class="sudoku-timer"
+                    aria-label="Elapsed time"
+                >
+                    <span>TIME</span>
+                    <strong id="timer">00:00</strong>
+                </div>
+
+            </div>
+
+
+            <div class="sudoku-toolbar">
+
+                <label for="difficulty">Difficulty</label>
+
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
+                </select>
+
+                <button id="new-game" type="button">New Game</button>
+                <button id="reset-puzzle" type="button">Reset Puzzle</button>
+
+            </div>
+
+
+            <div class="sudoku-layout">
+
+                <div class="sudoku-board-wrap">
+
+                    <div
+                        id="sudoku-board"
+                        class="sudoku-board"
+                        role="grid"
+                        aria-label="Sudoku board"
+                    ></div>
+
+                    <p
+                        id="game-message"
+                        class="sudoku-message"
+                        aria-live="polite"
+                    >
+                        Select an empty square to begin.
+                    </p>
+
+                </div>
+
+
+                <aside class="sudoku-controls" aria-label="Sudoku controls">
+
+                    <button
+                        id="notes-toggle"
+                        class="sudoku-control-button"
+                        type="button"
+                        aria-pressed="false"
+                    >
+                        Pencil mode: Off
+                    </button>
+
+                    <button
+                        id="clear-cell"
+                        class="sudoku-control-button"
+                        type="button"
+                    >
+                        Clear Cell
+                    </button>
+
+                    <div class="number-pad" aria-label="Number input">
+                        <button type="button" data-number="1">1</button>
+                        <button type="button" data-number="2">2</button>
+                        <button type="button" data-number="3">3</button>
+                        <button type="button" data-number="4">4</button>
+                        <button type="button" data-number="5">5</button>
+                        <button type="button" data-number="6">6</button>
+                        <button type="button" data-number="7">7</button>
+                        <button type="button" data-number="8">8</button>
+                        <button type="button" data-number="9">9</button>
+                    </div>
+
+                    <p class="sudoku-help">
+                        Pencil mode adds candidate notes. Incorrect entries are
+                        shown in red.
+                    </p>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>© 2026 Samarth. Built while learning.</p>
+
+    </footer>
+
+
+    <script src="../../script.js"></script>
+    <script src="../../theme.js"></script>
+    <script src="sudoku.js"></script>
+
+</body>
+
+</html>
