@@ -83,6 +83,23 @@
         href="../style.css"
     >
 
+    <!-- =====================================================
+         THEME SYSTEM
+         ===================================================== -->
+
+    <script>
+        (function() {
+            const cookie = document.cookie
+                .split(';')
+                .map((value) => value.trim())
+                .find((value) => value.startsWith('theme_preference='));
+
+            if (cookie && decodeURIComponent(cookie.slice(17)) === 'light') {
+                document.documentElement.classList.add('light-theme');
+            }
+        })();
+    </script>
+
 </head>
 
 
@@ -131,6 +148,8 @@
                 <a href="../contact/">
                     Contact
                 </a>
+
+                <button class="theme-toggle" aria-label="Switch to light mode">☀️</button>
 
             </div>
 
@@ -311,6 +330,7 @@
          ===================================================== -->
 
     <script src="../script.js"></script>
+    <script src="../theme.js"></script>
 
 </body>
 

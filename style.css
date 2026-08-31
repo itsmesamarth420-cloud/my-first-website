@@ -11,9 +11,58 @@ html {
 }
 
 body {
-    background-color: #0a0a0a;
+    /* ===== COLOR VARIABLES (DARK THEME DEFAULT) ===== */
+    --bg-page: #0a0a0a;
+    --bg-card: #151515;
+    --bg-card-darker: #1a1a1a;
+    --bg-learning-end: #111111;
+    --bg-navbar: rgba(21, 21, 21, 0.85);
+    --bg-learning-tag: #1f1f1f;
+    
+    --text-primary: #f5f5f5;
+    --text-secondary: #b8b8b8;
+    --text-heading: #ffffff;
+    --text-logo: #dbd1ce;
+    --text-counter: #888;
+    --text-status: #888;
+    
+    --accent-primary: #ff6b35;
+    --accent-primary-light: #ff8a63;
+    
+    --border-color: #2a2a2a;
+    --border-hover: #444;
+    --border-status: #333;
+    --border-profile: #333;
+    
+    --shadow-sm: rgba(0, 0, 0, 0.25);
+    --shadow-md: rgba(0, 0, 0, 0.35);
+    --shadow-lg: rgba(0, 0, 0, 0.4);
+    --shadow-xl: rgba(0, 0, 0, 0.45);
+    --shadow-2xl: rgba(0, 0, 0, 0.55);
+    
+    /* About page colors */
+    --about-bg:
+        radial-gradient(
+            circle at 72% 48%,
+            rgba(255, 69, 42, 0.28),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 90% 20%,
+            rgba(116, 17, 25, 0.28),
+            transparent 30%
+        ),
+        linear-gradient(135deg, #090a0c 0%, #0c0d0f 52%, #130b0c 100%);
+    --about-text-primary: #f5f0ea;
+    --about-text-accent: #ff5538;
+    --about-text-secondary: #a7a3a0;
+    --about-text-heading: #e8e3df;
+    --about-border: rgba(255, 89, 61, 0.24);
+    --about-eyebrow: #ff6847;
+    
+    background-color: var(--bg-page);
 
-    color: #f5f5f5;
+    color: var(--text-primary);
 
     font-family: Arial, sans-serif;
 
@@ -26,13 +75,59 @@ body {
     line-height: 1.6;
 }
 
+/* ===== LIGHT THEME ===== */
+html.light-theme body {
+    --bg-page: #f5f1eb;
+    --bg-card: #fffdfa;
+    --bg-card-darker: #faf6f0;
+    --bg-learning-end: #f3ede6;
+    --bg-navbar: rgba(255, 253, 250, 0.88);
+    --bg-learning-tag: #f4eee7;
+    
+    --text-primary: #27211d;
+    --text-secondary: #655d57;
+    --text-heading: #211c18;
+    --text-logo: #201c19;
+    --text-counter: #887e76;
+    --text-status: #887e76;
+    
+    --accent-primary: #ff6b35;
+    --accent-primary-light: #ff6b35;
+    
+    --border-color: #e5ddd4;
+    --border-hover: #d5c9bd;
+    --border-status: #ded3c8;
+    --border-profile: #ded4ca;
+    
+    --shadow-sm: rgba(64, 43, 27, 0.06);
+    --shadow-md: rgba(64, 43, 27, 0.09);
+    --shadow-lg: rgba(64, 43, 27, 0.12);
+    --shadow-xl: rgba(64, 43, 27, 0.15);
+    --shadow-2xl: rgba(64, 43, 27, 0.18);
+    
+    /* About page colors - light theme */
+    --about-bg:
+        radial-gradient(
+            circle at 78% 30%,
+            rgba(255, 107, 53, 0.08),
+            transparent 34%
+        ),
+        linear-gradient(135deg, #faf6f0 0%, #fffdfa 52%, #f7f0e9 100%);
+    --about-text-primary: #27211d;
+    --about-text-accent: #ff6b35;
+    --about-text-secondary: #655d57;
+    --about-text-heading: #403832;
+    --about-border: rgba(255, 107, 53, 0.16);
+    --about-eyebrow: #ff6b35;
+}
+
 
 /* =========================================================
    2. TYPOGRAPHY
    ========================================================= */
 
 h1 {
-    color: #ff6b35;
+    color: var(--accent-primary);
 
     font-size: 64px;
 
@@ -51,16 +146,18 @@ h2 {
     margin-top: 0;
 
     margin-bottom: 25px;
+
+    color: var(--text-primary);
 }
 
 h3 {
-    color: #ffffff;
+    color: var(--text-heading);
 
     margin-bottom: 12px;
 }
 
 p {
-    color: #b8b8b8;
+    color: var(--text-secondary);
 }
 
 
@@ -79,9 +176,9 @@ p {
 
     margin-bottom: 24px;
 
-    background-color: rgba(21, 21, 21, 0.85);
+    background-color: var(--bg-navbar);
 
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--border-color);
 
     border-radius: 14px;
 
@@ -94,8 +191,21 @@ p {
     z-index: 900;
 }
 
+/* Inner pages wrap the navbar in a header, which otherwise limits sticky positioning. */
+body > header {
+    position: sticky;
+
+    top: 20px;
+
+    z-index: 900;
+}
+
+body > header .navbar {
+    position: static;
+}
+
 .logo {
-    color: #dbd1ce;
+    color: var(--text-logo);
 
     font-size: 20px;
 
@@ -110,10 +220,12 @@ p {
     display: flex;
 
     gap: 25px;
+
+    align-items: center;
 }
 
 .nav-links a {
-    color: #b8b8b8;
+    color: var(--text-secondary);
 
     text-decoration: none;
 
@@ -123,7 +235,27 @@ p {
 }
 
 .nav-links a:hover {
-    color: #ffffff;
+    color: var(--text-primary);
+}
+
+.theme-toggle {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 4px 8px;
+    transition: transform 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.2);
+}
+
+.theme-toggle:active {
+    transform: scale(1);
 }
 
 
@@ -136,9 +268,9 @@ p {
 .projects,
 .learning,
 .experiment {
-    background-color: #151515;
+    background-color: var(--bg-card);
 
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--border-color);
 
     border-radius: 18px;
 
@@ -147,7 +279,7 @@ p {
     margin-bottom: 24px;
 
     box-shadow:
-        0 10px 40px rgba(0, 0, 0, 0.25);
+        0 10px 40px var(--shadow-sm);
 }
 
 
@@ -174,7 +306,7 @@ p {
             rgba(255, 107, 53, 0.15),
             transparent 40%
         ),
-        #151515;
+        var(--bg-card);
 }
 
 .intro-content {
@@ -197,14 +329,14 @@ p {
 
     border-radius: 18px;
 
-    border: 1px solid #333;
+    border: 1px solid var(--border-profile);
 
     cursor: pointer;
 
     flex-shrink: 0;
 
     box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.4);
+        0 15px 40px var(--shadow-lg);
 
     transition:
         transform 0.35s ease,
@@ -218,7 +350,7 @@ p {
     border-color: rgba(255, 107, 53, 0.6);
 
     box-shadow:
-        0 25px 60px rgba(0, 0, 0, 0.55),
+        0 25px 60px var(--shadow-2xl),
         0 0 70px rgba(255, 107, 53, 0.15);
 }
 
@@ -228,7 +360,7 @@ p {
    ========================================================= */
 
 .eyebrow {
-    color: #ff6b35 !important;
+    color: var(--accent-primary) !important;
 
     font-size: 13px !important;
 
@@ -273,18 +405,18 @@ p {
    ========================================================= */
 
 .project {
-    background-color: #1a1a1a;
+    background-color: var(--bg-card-darker);
 
     padding: 24px;
 
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--border-color);
 
     border-radius: 14px;
 
     flex: 1;
 
     box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.35);
+        0 15px 40px var(--shadow-md);
 
     transition:
         transform 0.3s ease,
@@ -295,10 +427,10 @@ p {
 .project:hover {
     transform: translateY(-5px);
 
-    border-color: #444;
+    border-color: var(--border-hover);
 
     box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.5);
+        0 20px 50px var(--shadow-2xl);
 }
 
 .project h3 {
@@ -344,7 +476,7 @@ p {
 #gallery-counter {
     text-align: center;
 
-    color: #888;
+    color: var(--text-counter);
 
     font-size: 14px;
 
@@ -356,10 +488,10 @@ p {
    13. GENERAL BUTTONS
    ========================================================= */
 
-button {
-    background-color: #ff6b35;
+button:not(.theme-toggle) {
+    background-color: var(--accent-primary);
 
-    color: #0a0a0a;
+    color: var(--bg-page);
 
     border: none;
 
@@ -379,7 +511,7 @@ button {
         box-shadow 0.2s ease;
 }
 
-button:hover {
+button:not(.theme-toggle):hover {
     transform: translateY(-2px);
 
     opacity: 0.9;
@@ -388,7 +520,7 @@ button:hover {
         0 5px 15px rgba(255, 107, 53, 0.25);
 }
 
-button:active {
+button:not(.theme-toggle):active {
     transform: translateY(0);
 }
 
@@ -411,7 +543,7 @@ button:active {
 .project-status {
     display: inline-block;
 
-    color: #888 !important;
+    color: var(--text-status) !important;
 
     font-size: 12px !important;
 
@@ -419,13 +551,48 @@ button:active {
 
     letter-spacing: 1px;
 
-    border: 1px solid #333;
+    border: 1px solid var(--border-status);
 
     padding: 5px 10px;
 
     border-radius: 20px;
 
     margin-top: 5px;
+}
+
+/* Project card link */
+
+.project-link {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 5px;
+    padding: 8px 12px;
+
+    color: var(--accent-primary-light);
+
+    background: rgba(255, 107, 53, 0.07);
+    border: 1px solid rgba(255, 107, 53, 0.38);
+    border-radius: 20px;
+
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+
+    transition:
+        color 0.2s ease,
+        background-color 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.project-link:hover {
+    color: var(--text-primary);
+
+    background: rgba(255, 107, 53, 0.16);
+    border-color: var(--accent-primary);
 }
 
 
@@ -437,8 +604,8 @@ button:active {
     background:
         linear-gradient(
             135deg,
-            #151515,
-            #111111
+            var(--bg-card),
+            var(--bg-learning-end)
         );
 }
 
@@ -451,11 +618,11 @@ button:active {
 }
 
 .learning-list span {
-    background-color: #1f1f1f;
+    background-color: var(--bg-learning-tag);
 
-    color: #d0d0d0;
+    color: var(--text-secondary);
 
-    border: 1px solid #333;
+    border: 1px solid var(--border-color);
 
     padding: 8px 14px;
 
@@ -469,9 +636,9 @@ button:active {
 }
 
 .learning-list span:hover {
-    color: #ffffff;
+    color: var(--text-primary);
 
-    border-color: #ff6b35;
+    border-color: var(--accent-primary);
 }
 
 
@@ -527,7 +694,7 @@ button:active {
     border-radius: 12px;
 
     box-shadow:
-        0 20px 80px rgba(0, 0, 0, 0.8);
+        0 20px 80px var(--shadow-xl);
 }
 
 
@@ -852,6 +1019,11 @@ button:active {
     opacity: 0.9;
 }
 
+/* The source logo is white; invert it only when the site is in light mode. */
+html.light-theme .logo img {
+    filter: invert(1);
+}
+
 
 /* =========================================================
    24. CONTACT PAGE IMAGE
@@ -872,10 +1044,10 @@ button:active {
 
     border-radius: 18px;
 
-    border: 1px solid #2a2a2a;
+    border: 1px solid var(--border-color);
 
     box-shadow:
-        0 15px 40px rgba(0, 0, 0, 0.4);
+        0 15px 40px var(--shadow-lg);
 
     transition:
         transform 0.3s ease,
@@ -886,7 +1058,7 @@ button:active {
     transform: translateY(-5px);
 
     box-shadow:
-        0 20px 50px rgba(0, 0, 0, 0.55);
+        0 20px 50px var(--shadow-2xl);
 }
 
 
@@ -911,7 +1083,7 @@ button:active {
 
     background-color: rgba(255, 107, 53, 0.06);
 
-    color: #ff8a63;
+    color: var(--accent-primary-light);
 
     border: 1px solid rgba(255, 107, 53, 0.45);
 
@@ -939,7 +1111,7 @@ button:active {
    --------------------------------------------------------- */
 
 .experiment-button:first-of-type {
-    color: #ff8a63;
+    color: var(--accent-primary-light);
 
     border-color: rgba(255, 107, 53, 0.45);
 
@@ -947,16 +1119,16 @@ button:active {
 }
 
 .experiment-button:first-of-type:hover {
-    color: #ffffff;
+    color: var(--text-primary);
 
-    border-color: #ff6b35;
+    border-color: var(--accent-primary);
 
     background-color: rgba(255, 107, 53, 0.12);
 
     transform: translateY(-3px);
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 10px 30px var(--shadow-md),
         0 0 20px rgba(255, 107, 53, 0.12);
 }
 
@@ -974,7 +1146,7 @@ button:active {
 }
 
 .experiment-button:nth-of-type(2):hover {
-    color: #ffffff;
+    color: var(--text-primary);
 
     border-color: #70a9d8;
 
@@ -983,7 +1155,7 @@ button:active {
     transform: translateY(-3px);
 
     box-shadow:
-        0 10px 30px rgba(0, 0, 0, 0.35),
+        0 10px 30px var(--shadow-md),
         0 0 20px rgba(112, 169, 216, 0.12);
 }
 
@@ -1024,7 +1196,7 @@ button:active {
 }
 
 .about-page h1 {
-    color: #f5f0ea;
+    color: var(--about-text-primary);
     font-size: clamp(58px, 7vw, 92px);
     line-height: 0.98;
     letter-spacing: -4px;
@@ -1034,19 +1206,19 @@ button:active {
 
 .about-page h1 span {
     display: block;
-    color: #ff5538;
+    color: var(--about-text-accent);
 }
 
 .about-page h2 {
-    color: #f5f0ea;
+    color: var(--about-text-primary);
 }
 
 .about-page h3 {
-    color: #f5f0ea;
+    color: var(--about-text-primary);
 }
 
 .about-page p {
-    color: #aaa5a2;
+    color: var(--about-text-secondary);
 }
 
 
@@ -1055,7 +1227,7 @@ button:active {
    ========================================================= */
 
 .about-eyebrow {
-    color: #ff6847 !important;
+    color: var(--about-eyebrow) !important;
     font-size: 12px !important;
     font-weight: 700;
     letter-spacing: 2.5px;
@@ -1080,30 +1252,14 @@ button:active {
 
     overflow: hidden;
 
-    background:
-        radial-gradient(
-            circle at 72% 48%,
-            rgba(255, 69, 42, 0.28),
-            transparent 32%
-        ),
-        radial-gradient(
-            circle at 90% 20%,
-            rgba(116, 17, 25, 0.28),
-            transparent 30%
-        ),
-        linear-gradient(
-            135deg,
-            #090a0c 0%,
-            #0c0d0f 52%,
-            #130b0c 100%
-        );
+    background: var(--about-bg);
 
-    border: 1px solid rgba(255, 89, 61, 0.24);
+    border: 1px solid var(--about-border);
 
     border-radius: 24px;
 
     box-shadow:
-        0 30px 80px rgba(0, 0, 0, 0.45);
+        0 30px 80px var(--shadow-xl);
 }
 
 
@@ -1123,7 +1279,7 @@ button:active {
 }
 
 .about-hero-content h2 {
-    color: #e8e3df;
+    color: var(--about-text-heading);
 
     font-size: 26px;
     font-weight: 400;
@@ -1136,7 +1292,7 @@ button:active {
 .about-hero-text {
     max-width: 500px;
 
-    color: #a7a3a0 !important;
+    color: var(--about-text-secondary) !important;
 
     font-size: 17px;
     line-height: 1.8;
@@ -2095,6 +2251,8 @@ button:active {
     }
 
 }
+
+
 /* =========================================================
    HOME HERO - LANDSCAPE EARTH IMAGE
    ========================================================= */
@@ -2375,5 +2533,99 @@ button:active {
         border-radius: 14px;
     }
 
+}
+
+
+/* =========================================================
+   LIGHT THEME: LATE PAGE-SPECIFIC OVERRIDES
+   ========================================================= */
+
+html.light-theme .profile-image,
+html.light-theme .contact-image {
+    border-color: var(--border-color);
+
+    box-shadow:
+        0 20px 50px var(--shadow-xl);
+}
+
+html.light-theme .profile-image:hover,
+html.light-theme .contact-image:hover {
+    box-shadow:
+        0 25px 60px var(--shadow-2xl);
+}
+
+html.light-theme .intro {
+    background:
+        radial-gradient(
+            circle at top right,
+            rgba(255, 107, 53, 0.09),
+            transparent 42%
+        ),
+        var(--bg-card);
+}
+
+html.light-theme .about-cta {
+    color: var(--accent-primary) !important;
+
+    background: rgba(255, 107, 53, 0.06);
+    border-color: rgba(255, 107, 53, 0.55);
+}
+
+html.light-theme .about-cta:hover {
+    color: #ffffff !important;
+
+    background: var(--accent-primary);
+    border-color: var(--accent-primary);
+
+    box-shadow:
+        0 10px 30px var(--shadow-md),
+        0 0 25px rgba(255, 107, 53, 0.16);
+}
+
+html.light-theme .about-pillars,
+html.light-theme .about-tech {
+    background: linear-gradient(145deg, #fffdfa, #faf6f0);
+    border-color: var(--about-border);
+
+    box-shadow:
+        0 25px 70px var(--shadow-md);
+}
+
+html.light-theme .about-pillar {
+    border-color: var(--border-color);
+}
+
+html.light-theme .about-drive {
+    border-color: var(--border-color);
+}
+
+html.light-theme .process-item {
+    background: var(--bg-card-darker);
+    border-color: var(--border-color);
+}
+
+html.light-theme .process-item:hover {
+    background: #fff7f3;
+    border-color: rgba(255, 107, 53, 0.4);
+}
+
+html.light-theme .tech-item {
+    color: var(--text-secondary);
+}
+
+html.light-theme .tech-item:hover {
+    background: #fff7f3;
+}
+
+html.light-theme .about-closing {
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(255, 107, 53, 0.09),
+            transparent 55%
+        ),
+        linear-gradient(145deg, #fffdfa, #f8f1ea);
+
+    border-color: var(--about-border);
 }
 
